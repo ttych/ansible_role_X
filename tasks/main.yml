@@ -1,3 +1,7 @@
 ---
 
-- include_tasks: sddm.yml
+- block:
+
+    - include_tasks: sddm.yml
+
+  when: hosttype == 'desktop'
