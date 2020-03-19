@@ -4,3 +4,5 @@ hosttype: none
 sddm_conf_file: /etc/sddm.conf
 sddm_session: Lubuntu
 sddm_autologin_user: null
+sddm_minimum_uid: 2000
+sddm_maximum_uid: 2999
