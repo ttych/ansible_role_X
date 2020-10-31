@@ -6,3 +6,6 @@ sddm_session: Lubuntu
 sddm_autologin_user: null
 sddm_minimum_uid: 2000
 sddm_maximum_uid: 2999
+
+hidden_users:
+  - admin
