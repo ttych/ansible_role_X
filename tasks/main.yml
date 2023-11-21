@@ -2,6 +2,10 @@
 
 - block:
 
+    - include_tasks: package_facts.yml
+
     - include_tasks: sddm.yml
+
+    - include_tasks: lxqt.yml
 
   when: hosttype == 'desktop'

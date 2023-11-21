@@ -1,0 +1,18 @@
+---
+
+- name: check if lxqt main package is present
+  set_fact:
+    t_x_has_lxqt: "{{ True if (lxqt_main_package in ansible_facts.packages) else False}}"
+
+- name: configure lxqt
+  block:
+    - name: deploy lxqt sudo
+      template:
+        src: lxqt/sudoers
+        dest: "{{ x_sudoers_d }}/lxqt"
+        owner: root
+        group: 0
+        mode: '0440'
+
+  when:
+    - t_x_has_lxqt

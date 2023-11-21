@@ -1,11 +1,16 @@
 ---
 hosttype: none
 
+lxqt_main_package: liblxqt1
+
 sddm_conf_file: /etc/sddm.conf
 sddm_session: Lubuntu
 sddm_autologin_user: null
 sddm_minimum_uid: 2000
 sddm_maximum_uid: 2999
+
+x_user_group: users
+x_sudoers_d: /etc/sudoers.d
 
 hidden_users:
   - admin
