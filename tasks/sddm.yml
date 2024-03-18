@@ -1,13 +1,13 @@
 ---
 - stat:
-    path: "{{ sddm_conf_file }}"
-  register: t_sddm_conf_stat
+    path: "{{ x_sddm_conf_file }}"
+  register: t_x_sddm_conf_stat
 
 - name: deploy sddm.conf
   template:
     src: sddm/sddm.conf
-    dest: "{{ sddm_conf_file }}"
+    dest: "{{ x_sddm_conf_file }}"
     mode: 0644
     owner: root
     group: root
-  when: t_sddm_conf_stat.stat.exists
+  when: t_x_sddm_conf_stat.stat.exists

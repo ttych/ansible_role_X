@@ -2,7 +2,7 @@
 
 - name: check if lxqt main package is present
   set_fact:
-    t_x_has_lxqt: "{{ True if (lxqt_main_package in ansible_facts.packages) else False}}"
+    t_x_has_lxqt: "{{ True if (x_lxqt_main_package in ansible_facts.packages) else False}}"
 
 - name: configure lxqt
   block:

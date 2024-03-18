@@ -8,4 +8,4 @@
 
     - include_tasks: lxqt.yml
 
-  when: hosttype == 'desktop'
+  when: host_type == 'workstation'
