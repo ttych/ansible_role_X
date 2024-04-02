@@ -6,8 +6,8 @@ x_lxqt_main_package: liblxqt1
 x_sddm_conf_file: /etc/sddm.conf
 x_sddm_session: Lubuntu
 x_sddm_autologin_user: null
-x_sddm_minimum_uid: 3000
-x_sddm_maximum_uid: 10000
+x_sddm_minimum_uid: 5000
+x_sddm_maximum_uid: 20000
 
 x_user_group: users
 x_sudoers_d: /etc/sudoers.d
