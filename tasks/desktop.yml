@@ -1,0 +1,10 @@
+---
+
+- name: install desktop
+  package:
+    name: "{{ x_desktops[x_desktop] }}"
+    state: present
+  when:
+    - x_desktop|d(false)
+    - x_desktops|d(false)
+    - x_desktops[x_desktop]|d(false)

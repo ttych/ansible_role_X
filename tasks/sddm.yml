@@ -1,13 +1,18 @@
 ---
-- stat:
-    path: "{{ x_sddm_conf_file }}"
-  register: t_x_sddm_conf_stat
 
-- name: deploy sddm.conf
-  template:
-    src: sddm/sddm.conf
-    dest: "{{ x_sddm_conf_file }}"
-    mode: 0644
-    owner: root
-    group: root
-  when: t_x_sddm_conf_stat.stat.exists
+- name: sddm service status
+  service:
+    name: "{{ x_sddm_service_name }}"
+  register: t_sys_sddm_service_status
+
+- block:
+
+    - name: deploy sddm.conf
+      template:
+        src: sddm/sddm.conf
+        dest: "{{ x_sddm_conf_file }}"
+        mode: 0644
+        owner: root
+        group: root
+
+  when: t_sys_sddm_service_status.status.ActiveState|d(false) == 'active'

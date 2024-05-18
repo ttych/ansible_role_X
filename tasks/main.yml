@@ -1,11 +1,14 @@
 ---
 
 - block:
+    - include_tasks: context.yml
 
-    - include_tasks: package_facts.yml
+    - include_tasks: desktop.yml
 
     - include_tasks: sddm.yml
 
+    - include_tasks: package_facts.yml
+
     - include_tasks: lxqt.yml
 
-  when: host_type == 'workstation'
+  when: (host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))

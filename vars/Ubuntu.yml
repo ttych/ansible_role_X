@@ -1,0 +1,7 @@
+---
+
+x_desktops:
+  kde: kubuntu-desktop
+  gnome: ubuntu-desktop
+  xfce: xubuntu-desktop
+  lxde: lubuntu-desktop
