@@ -8,3 +8,19 @@
     - x_desktop|d(false)
     - x_desktops|d(false)
     - x_desktops[x_desktop]|d(false)
+
+- name: install desktop extras
+  package:
+    name: "{{ x_desktop_extensions[x_desktop] }}"
+    state: present
+  when:
+    - x_desktop|d(false)
+    - x_desktop_extensions|d(false)
+    - x_desktop_extensions[x_desktop]|d(false)
+
+- name: install desktop extras
+  package:
+    name: "{{ x_desktop_extas }}"
+    state: present
+  when:
+    - x_desktop_extras|d(false)

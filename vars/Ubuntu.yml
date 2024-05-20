@@ -5,3 +5,12 @@ x_desktops:
   gnome: ubuntu-desktop
   xfce: xubuntu-desktop
   lxde: lubuntu-desktop
+
+x_desktop_extensions:
+  kde: []
+  gnome: []
+  xfce: []
+  lxde:
+    - lubuntu-update-notifier
+
+x_desktop_extras: []
