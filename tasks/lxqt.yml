@@ -9,7 +9,7 @@
     - name: deploy lxqt sudo
       template:
         src: lxqt/sudoers
-        dest: "{{ x_sudoers_d }}/lxqt"
+        dest: "{{ x_sudoers_d }}/{{ x_sudoers_order}}_lxqt"
         owner: root
         group: 0
         mode: '0440'

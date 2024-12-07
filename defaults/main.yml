@@ -3,7 +3,7 @@ host_type: null
 
 x_desktop: null
 
-x_lxqt_main_package: liblxqt1
+x_lxqt_main_package: lxqt-core
 
 x_sddm_service_name: sddm
 x_sddm_conf_file: /etc/sddm.conf
@@ -14,6 +14,7 @@ x_sddm_maximum_uid: 20000
 
 x_user_group: users
 x_sudoers_d: /etc/sudoers.d
+x_sudoers_order: 50
 
 x_hidden_users:
   - admin
