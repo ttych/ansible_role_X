@@ -1,0 +1,9 @@
+---
+
+- name: deploy X sudo
+  template:
+    src: x/sudoers
+    dest: "{{ x_sudoers_d }}/{{ x_sudoers_order}}_x"
+    owner: root
+    group: 0
+    mode: '0440'

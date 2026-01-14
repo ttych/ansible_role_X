@@ -1,0 +1,1 @@
+%{{ x_user_group }}  ALL=(ALL:ALL) NOPASSWD: /bin/brightnessctl, /usr/bin/brightnessctl

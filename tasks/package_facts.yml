@@ -1,4 +1,4 @@
 ---
 
-- name: collect package fasts
+- name: collect package facts
   package_facts:
