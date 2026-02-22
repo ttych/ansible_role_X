@@ -1,0 +1,10 @@
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="{{ x_keyboard_model }}"
+XKBLAYOUT="{{ x_keyboard_layout }}"
+XKBVARIANT="{{ x_keyboard_variant }}"
+XKBOPTIONS="{{ x_keyboard_options }}"
+
+BACKSPACE="guess"

@@ -5,22 +5,23 @@
     name: "{{ x_desktops[x_desktop] }}"
     state: present
   when:
-    - x_desktop|d(false)
-    - x_desktops|d(false)
-    - x_desktops[x_desktop]|d(false)
+    - x_desktop is defined and x_desktop is not none
+    - x_desktops is defined and x_desktops is not none
+    - x_desktops[x_desktop] is defined and x_desktops[x_desktop] is not none and (x_desktops[x_desktop] | length > 0)
 
 - name: install desktop extras
   package:
     name: "{{ x_desktop_extensions[x_desktop] }}"
     state: present
   when:
-    - x_desktop|d(false)
-    - x_desktop_extensions|d(false)
-    - x_desktop_extensions[x_desktop]|d(false)
+    - x_desktop is defined and x_desktop is not none
+    - x_desktop_extensions is defined and x_desktop_extensions is not none
+    - x_desktop_extensions[x_desktop] is defined and x_desktop_extensions[x_desktop] is not none and (x_desktop_extensions[x_desktop] | length > 0)
 
 - name: install desktop extras
   package:
     name: "{{ x_desktop_extas }}"
     state: present
   when:
-    - x_desktop_extras|d(false)
+    - x_desktop_extras is defined and x_desktop_extras is not none
+    - x_desktop_extras | length > 0

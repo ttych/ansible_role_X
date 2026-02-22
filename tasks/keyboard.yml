@@ -1,0 +1,16 @@
+---
+
+- block:
+
+    - name: deploy default keyboard
+      ansible.builtin.template:
+        src: keyboard/default_keyboard
+        dest: "{{ x_debian_default_keyboard_filepath }}"
+        owner: root
+        group: root
+        mode: "0644"
+      when:
+        - x_keyboard_layout is not none
+
+  when:
+    - ansible_facts.os_family == "Debian"

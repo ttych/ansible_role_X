@@ -18,3 +18,12 @@ x_sudoers_order: 50
 
 x_hidden_users:
   - admin
+
+x_keyboard_layout: null
+x_keyboard_model: pc105
+x_keyboard_variant: ""
+x_keyboard_options: ""
+x_keyboard_backspace: guess
+
+
+x_debian_default_keyboard_filepath: /etc/default/keyboard

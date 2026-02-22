@@ -11,6 +11,8 @@
 
     - include_tasks: x.yml
 
+    - include_tasks: keyboard.yml
+
     - include_tasks: lxqt.yml
 
   when: (host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))
