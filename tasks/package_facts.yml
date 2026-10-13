@@ -1,4 +1,0 @@
----
-
-- name: collect package facts
-  package_facts:

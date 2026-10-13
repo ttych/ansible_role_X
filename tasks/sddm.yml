@@ -1,18 +1,28 @@
 ---
 
-- name: sddm service status
-  service:
-    name: "{{ x_sddm_service_name }}"
-  register: t_sys_sddm_service_status
+- name: stat sddm
+  ansible.builtin.package:
+    name: "{{ x_sddm_check_package }}"
+    state: present
+  check_mode: true
+  register: t_x_sddm_stat
 
-- block:
+
+- name: sddm
+  when: not t_x_sddm_stat.changed
+  block:
+
+    - name: sddm service status
+      ansible.builtin.service:
+        name: "{{ x_sddm_service_name }}"
+      register: t_x_sddm_service_status
+
+      # when: t_x_sddm_service_status.status.ActiveState|d(false) == 'active'
 
     - name: deploy sddm.conf
-      template:
+      ansible.builtin.template:
         src: sddm/sddm.conf
         dest: "{{ x_sddm_conf_file }}"
         mode: 0644
         owner: root
         group: root
-
-  when: t_sys_sddm_service_status.status.ActiveState|d(false) == 'active'

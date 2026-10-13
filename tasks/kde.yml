@@ -1,0 +1,16 @@
+---
+
+- name: kde
+  when: x_desktop not in [none, ''] and x_desktop in ['kde']
+  block:
+
+    - name: install kde
+      ansible.builtin.package:
+        name: "{{x_kde_packages }}"
+        state: present
+
+
+    - name: set has_kde and has_kubuntu
+      ansible.builtin.set_fact:
+        has_kde: yes
+        has_kubuntu: yes

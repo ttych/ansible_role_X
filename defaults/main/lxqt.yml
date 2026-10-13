@@ -1,0 +1,8 @@
+---
+
+x_lxqt_packages:
+  - lubuntu-desktop
+  - lubuntu-update-notifier
+
+x_lxqt_sudoers_d: "{{ x_x11_sudoers_d }}"
+x_lxqt_sudoers_order: "{{ x_x11_sudoers_order }}"

@@ -1,1 +1,1 @@
-%{{ x_user_group }}  ALL=(ALL:ALL) NOPASSWD: /bin/lxqt-backlight_backend, /usr/bin/lxqt-backlight_backend
+%{{ x_x11_user_group }}  ALL=(ALL:ALL) NOPASSWD: /bin/lxqt-backlight_backend, /usr/bin/lxqt-backlight_backend

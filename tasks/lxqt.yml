@@ -1,18 +1,24 @@
 ---
 
-- name: check if lxqt main package is present
-  set_fact:
-    t_x_has_lxqt: "{{ True if (x_lxqt_main_package in ansible_facts.packages) else False}}"
-
-- name: configure lxqt
+- name: lxqt
+  when: x_desktop not in [none, ''] and x_desktop in ['lxde', 'lxqt']
   block:
-    - name: deploy lxqt sudo
-      template:
+
+    - name: install lxqt
+      ansible.builtin.package:
+        name: "{{x_lxqt_packages }}"
+        state: present
+
+    - name: lxqt sudoers
+      ansible.builtin.template:
         src: lxqt/sudoers
-        dest: "{{ x_sudoers_d }}/{{ x_sudoers_order}}_lxqt"
+        dest: "{{ x_lxqt_sudoers_d }}/{{ x_lxqt_sudoers_order }}_lxqt"
         owner: root
         group: 0
         mode: '0440'
 
-  when:
-    - t_x_has_lxqt
+
+    - name: set has_lxqt and has_lubuntu
+      ansible.builtin.set_fact:
+        has_lxqt: yes
+        has_lubuntu: yes

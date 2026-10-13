@@ -1,0 +1,39 @@
+---
+
+x_x11_packages:
+  - xserver-xorg-core
+  - xinit
+  - x11-xserver-utils
+  - xfonts-base
+  - xfonts-utils
+  - xterm
+  - x11-apps
+  - x11-utils
+  - x11-xkb-utils
+  - x11-session-utils
+  - xauth
+  - xinput
+
+x_x11_extra_packages:
+  - brightnessctl
+  - sxhkd
+  - xbindkeys
+
+
+x_x11_hidden_users_base:
+  - admin
+x_x11_hidden_users: []
+
+
+x_x11_sudoers_d: /etc/sudoers.d
+x_x11_sudoers_order: 50
+x_x11_user_group: users
+
+
+x_x11_debian_default_keyboard_filepath: /etc/default/keyboard
+
+x_x11_keyboard_layout: null
+x_x11_keyboard_model: pc105
+x_x11_keyboard_variant: ""
+x_x11_keyboard_options: ""
+x_x11_keyboard_backspace: guess

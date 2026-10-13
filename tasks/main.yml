@@ -1,18 +1,22 @@
 ---
 
 - block:
-    - include_tasks: context.yml
+    - include_tasks: _context.yml
 
-    - include_tasks: desktop.yml
-
-    - include_tasks: sddm.yml
-
-    - include_tasks: package_facts.yml
-
-    - include_tasks: x.yml
-
-    - include_tasks: keyboard.yml
+    - include_tasks: x11.yml
 
     - include_tasks: lxqt.yml
 
-  when: (host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))
+    - include_tasks: kde.yml
+
+    - include_tasks: sddm.yml
+
+  when:
+    - want_x
+    - (host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))
+
+
+- name: set has_x
+  ansible.builtin.set_fact:
+    has_x: "{{ want_x and ((host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))) }}"
+    has_x11: "{{ want_x and ((host_type == 'workstation') or (is_workstation|d(false)) or (is_desktop|d(false))) }}"

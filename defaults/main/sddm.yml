@@ -1,0 +1,10 @@
+---
+
+x_sddm_check_package: sddm
+
+x_sddm_service_name: sddm
+x_sddm_conf_file: /etc/sddm.conf
+x_sddm_session: Lubuntu
+x_sddm_autologin_user: null
+x_sddm_minimum_uid: 5000
+x_sddm_maximum_uid: 20000

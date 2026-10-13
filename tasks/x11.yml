@@ -1,0 +1,35 @@
+---
+
+- name: install X11 packages
+  ansible.builtin.package:
+    name: "{{ x_x11_packages }}"
+    state: present
+
+- name: install X11 extra packages
+  ansible.builtin.package:
+    name: "{{ x_x11_extra_packages }}"
+    state: present
+
+
+- name: deploy X11 sudo
+  ansible.builtin.template:
+    src: x11/sudoers
+    dest: "{{ x_x11_sudoers_d }}/{{ x_x11_sudoers_order}}_x"
+    owner: root
+    group: 0
+    mode: '0440'
+
+
+- name: X11 keyboard layout
+  when: x_x11_keyboard_layout is not none
+  block:
+
+    - name: deploy default keyboard
+      ansible.builtin.template:
+        src: x11/default_keyboard
+        dest: "{{ x_x11_debian_default_keyboard_filepath }}"
+        owner: root
+        group: root
+        mode: "0644"
+      when:
+        - ansible_facts.os_family == "Debian"

@@ -1,0 +1,10 @@
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="{{ x_x11_keyboard_model }}"
+XKBLAYOUT="{{ x_x11_keyboard_layout }}"
+XKBVARIANT="{{ x_x11_keyboard_variant }}"
+XKBOPTIONS="{{ x_x11_keyboard_options }}"
+
+BACKSPACE="{{ x_x11_keyboard_backspace }}"
