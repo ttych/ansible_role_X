@@ -1,0 +1,10 @@
+---
+
+- name: AMD GPU 860M
+  ansible.builtin.template:
+    src: x11/xorg_amdgpu_workaround.conf
+    dest: "{{ x_x11_xorg_conf_d }}/{{ x_x11_xorg_conf_priority }}-amdgpu_workaround.conf"
+    mode: 0644
+    owner: root
+    group: root
+  when: "'Radeon 860M' in ansible_facts.processor | join(' ')"

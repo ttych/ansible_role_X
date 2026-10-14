@@ -5,6 +5,8 @@
 
     - include_tasks: x11.yml
 
+    - include_tasks: x11_workaround.yml
+
     - include_tasks: lxqt.yml
 
     - include_tasks: kde.yml

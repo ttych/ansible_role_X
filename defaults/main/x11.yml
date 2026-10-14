@@ -37,3 +37,7 @@ x_x11_keyboard_model: pc105
 x_x11_keyboard_variant: ""
 x_x11_keyboard_options: ""
 x_x11_keyboard_backspace: guess
+
+
+x_x11_xorg_conf_d: /etc/X11/xorg.conf.d
+x_x11_xorg_conf_priority: 10
